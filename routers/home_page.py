@@ -25,8 +25,8 @@ def home_page(homePageQueryModel : HomePageQueryModel):
 
 def fetch_recomended_books(homePageQueryModel : HomePageQueryModel):
     books = requests.get(url="http://gen.lib.rus.ec/json.php", params={
-        "fields": "id,Title,Author,MD5,language,coverurl,topic,pages,descr",
-        "limit2": 30,
+        "fields": "id,Title,Author,MD5,language,coverurl,topic,pages",
+        "limit2": 50,
         "mode": "last",
         "timefirst": homePageQueryModel.fromDate,
         "timelast": homePageQueryModel.toDate
