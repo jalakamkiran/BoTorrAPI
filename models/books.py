@@ -12,6 +12,7 @@ class Books:
     language: str
     coverurl: str
     topic: str
+    pages : str
 
     @staticmethod
     def from_dict(obj: Any) -> 'Books':
@@ -22,7 +23,8 @@ class Books:
         _language = str(obj.get("language"))
         _coverurl = "https://libgen.is/covers/" + str(obj.get("coverurl"))
         _topic = str(obj.get("topic"))
-        return Books(_id, _title, _author, _md5, _language, _coverurl, _topic)
+        _pages = str(obj.get("pages"))
+        return Books(_id, _title, _author, _md5, _language, _coverurl, _topic,_pages)
 
 # Example Usage
 # jsonstring = json.loads(myjsonstring)
