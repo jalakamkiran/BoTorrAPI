@@ -1,6 +1,7 @@
 import json
 import logging
 
+from bs4 import BeautifulSoup
 from fastapi import APIRouter, HTTPException
 from models.books import Books
 from models.home_page_query_model import HomePageQueryModel
@@ -42,7 +43,7 @@ def fetch_recomended_books(homePageQueryModel : HomePageQueryModel):
 async def download_book_using_md5(id: str):
     if id is None or id == "":
         raise HTTPException(status_code=400, detail={'message': "Md5 can't be none or empty"})
-    downloadLink = libgenparser.resolve_download_link(id)
+    downloadLink = resolve_download_link(id)
     return {"download_link": downloadLink}
 
 
@@ -59,3 +60,19 @@ def parse_search_result_to_books(result):
         books = Books(i['ID'], i['Title'], i['Author'], i['MD5'], i['Language'], i['Thumb'], '',i['Pages'])
         book_list.append(books)
     return book_list
+
+def resolve_download_link(md5) -> list:
+    """
+    resolves the book's download link by using it's md5 identifier
+    and parses the download page of book for available download links
+    and returns the first download link found.
+
+    :param md5: md5 hash identifier of that specific book.
+    :return: returns download url string of book on success.
+    """
+    download_urls = []
+    listofurl = BeautifulSoup(requests.get(f"http://library.lol/main/{md5}").text, "lxml").find_all('li')
+    for i in listofurl:
+        url = i.find('a')['href']
+        download_urls.append(url)
+    return download_urls
