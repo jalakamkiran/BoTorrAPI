@@ -44,3 +44,18 @@ async def download_book_using_md5(id: str):
         raise HTTPException(status_code=400, detail={'message': "Md5 can't be none or empty"})
     downloadLink = libgenparser.resolve_download_link(id)
     return {"download_link": downloadLink}
+
+
+@router.get('/search/{title}')
+def search_book(title: str):
+    if title is None or title == "" :
+        raise HTTPException(status_code=400, detail={'message': "Title can't be none or empty"})
+    result = libgenparser.search_title(title=title)
+    return {'books': parse_search_result_to_books(result)}
+
+def parse_search_result_to_books(result):
+    book_list = []
+    for i in result:
+        books = Books(i['ID'], i['Title'], i['Author'], i['MD5'], i['Language'], i['Thumb'], '',i['Pages'])
+        book_list.append(books)
+    return book_list
