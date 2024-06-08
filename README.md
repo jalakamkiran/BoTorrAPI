@@ -33,10 +33,10 @@ While the current version of Bo-Torr primarily focuses on the home page function
 
 ### ScreenShots
 
-![splash](https://github.com/jalakamkiran/libgen-client/assets/39314292/57cfc976-6a4c-41f3-a58f-d92a60d07fd0)
-![search](https://github.com/jalakamkiran/libgen-client/assets/39314292/2e671fd4-9e6c-4a23-aff9-19d0f9483fc8)
-![home](https://github.com/jalakamkiran/libgen-client/assets/39314292/3941afec-8f18-40f3-a687-aa7c31659b4f)
-![bookview](https://github.com/jalakamkiran/libgen-client/assets/39314292/42cba5eb-8f65-4c25-a311-281cc971e320)
+![splash](https://github.com/jalakamkiran/libgen-client/assets/39314292/57cfc976-6a4c-41f3-a58f-d92a60d07fd0 250x250)
+![search](https://github.com/jalakamkiran/libgen-client/assets/39314292/2e671fd4-9e6c-4a23-aff9-19d0f9483fc8 250x250)
+![home](https://github.com/jalakamkiran/libgen-client/assets/39314292/3941afec-8f18-40f3-a687-aa7c31659b4f 250x250)
+![bookview](https://github.com/jalakamkiran/libgen-client/assets/39314292/42cba5eb-8f65-4c25-a311-281cc971e320 250x250)
 
 Stay tuned for upcoming releases as we continue to evolve Bo-Torr into a comprehensive platform for book lovers worldwide.
 
