@@ -1,15 +1,15 @@
 # Bo-Torr
 
-Bo-Torr is a mobile application designed for book enthusiasts, offering a centralized platform to explore, discover, and engage with a vast collection of books. Leveraging open-source APIs like Libgen, NYTimes, and Google Books, Granthalay aims to provide users with an immersive reading experience.
+Bo-Torr is a mobile application designed for book enthusiasts, offering a centralized platform to explore, discover, and engage with a vast collection of books. Leveraging open-source APIs like Libgen, NYTimes, and Google Books, Bo-Torr aims to provide users with an immersive reading experience.
 
 ## Home Page
 
-The current version of Granthalay features a functional home page that serves as the entry point to the application. Below are the key components and functionalities available on the home page:
+The current version of Bo-Torr features a functional home page that serves as the entry point to the application. Below are the key components and functionalities available on the home page:
 
 ### Features
 
 - **Search Bar**: A prominent search bar at the top of the home page allows users to search for books by title, author, genre, or keywords.
-- **Book Recommendations**: Based on user preferences and browsing history, Granthalay provides personalized book recommendations directly on the home page.
+- **Book Recommendations**: Based on user preferences and browsing history, Bo-Torr provides personalized book recommendations directly on the home page.
 - **Trending Books**: Display of trending books sourced from NYTimes bestseller lists, giving users insights into popular reads.
 - **Featured Collections**: Curated collections of books based on themes, genres, or special promotions are showcased to pique user interest.
 - **Latest News**: Integration with NYTimes API to display the latest literary news, author interviews, and book reviews.
@@ -23,7 +23,7 @@ The current version of Granthalay features a functional home page that serves as
 
 ### Future Developments
 
-While the current version of Granthalay primarily focuses on the home page functionality, future updates will introduce additional features and enhancements, including:
+While the current version of Bo-Torr primarily focuses on the home page functionality, future updates will introduce additional features and enhancements, including:
 
 - Implementation of Libgen API for accessing a broader range of free eBooks.
 - Integration of Google Books API for enriched book metadata and cover images.
@@ -38,7 +38,7 @@ While the current version of Granthalay primarily focuses on the home page funct
 ![home](https://github.com/jalakamkiran/libgen-client/assets/39314292/3941afec-8f18-40f3-a687-aa7c31659b4f)
 ![bookview](https://github.com/jalakamkiran/libgen-client/assets/39314292/42cba5eb-8f65-4c25-a311-281cc971e320)
 
-Stay tuned for upcoming releases as we continue to evolve Granthalay into a comprehensive platform for book lovers worldwide.
+Stay tuned for upcoming releases as we continue to evolve Bo-Torr into a comprehensive platform for book lovers worldwide.
 
 ## Installation
 
@@ -51,8 +51,8 @@ As the application is in the early stages of development and only the home page 
 
 ## Contributing
 
-We welcome contributions from the community to help enhance and improve Granthalay. If you have any ideas, feature requests, bug reports, or suggestions for improvement, please don't hesitate to open an issue or submit a pull request.
+We welcome contributions from the community to help enhance and improve Bo-torr. If you have any ideas, feature requests, bug reports, or suggestions for improvement, please don't hesitate to open an issue or submit a pull request.
 
 ## License
 
-Granthalay is licensed under the [MIT License](LICENSE).
+Bo-Torr is licensed under the [MIT License](LICENSE).
