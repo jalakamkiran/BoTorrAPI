@@ -55,6 +55,7 @@ def search_book(title: str):
     return {'books': parse_search_result_to_books(result)}
 
 def parse_search_result_to_books(result):
+    logging.info(result)
     book_list = []
     for i in result:
         books = Books(i['ID'], i['Title'], i['Author'], i['MD5'], i['Language'], i['Thumb'], '',i['Pages'])
@@ -75,4 +76,5 @@ def resolve_download_link(md5) -> list:
     for i in listofurl:
         url = i.find('a')['href']
         download_urls.append(url)
+    download_urls.append(f"https://libgen.rs/book/index.php?md5={md5}")
     return download_urls
