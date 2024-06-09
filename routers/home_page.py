@@ -62,6 +62,12 @@ def parse_search_result_to_books(result):
         book_list.append(books)
     return book_list
 
+@router.get("/searchByIsbn/{isbn}")
+def search_by_isbn(isbn):
+    logging.info("Serching by ISBN")
+    result = libgenparser.search_isbn(isbn=isbn)
+    return {"book":result}
+
 def resolve_download_link(md5) -> list:
     """
     resolves the book's download link by using it's md5 identifier
@@ -76,5 +82,7 @@ def resolve_download_link(md5) -> list:
     for i in listofurl:
         url = i.find('a')['href']
         download_urls.append(url)
+    downlod_get_url = BeautifulSoup(requests.get(f"http://library.lol/main/{md5}").text, "lxml")
     download_urls.append(f"https://libgen.rs/book/index.php?md5={md5}")
+    download_urls.append(downlod_get_url.find(attrs={"id":"download"}).find('a')['href'])
     return download_urls
