@@ -43,7 +43,7 @@ def fetch_recomended_books(homePageQueryModel : HomePageQueryModel):
 async def download_book_using_md5(id: str):
     if id is None or id == "":
         raise HTTPException(status_code=400, detail={'message': "Md5 can't be none or empty"})
-    downloadLink = resolve_download_link(id)
+    downloadLink = f"https://libgen.rs/book/index.php?md5={id}"
     return {"download_link": downloadLink}
 
 
@@ -67,22 +67,3 @@ def search_by_isbn(isbn):
     logging.info("Serching by ISBN")
     result = libgenparser.search_isbn(isbn=isbn)
     return {"book":result}
-
-def resolve_download_link(md5) -> list:
-    """
-    resolves the book's download link by using it's md5 identifier
-    and parses the download page of book for available download links
-    and returns the first download link found.
-
-    :param md5: md5 hash identifier of that specific book.
-    :return: returns download url string of book on success.
-    """
-    download_urls = []
-    listofurl = BeautifulSoup(requests.get(f"http://library.lol/main/{md5}").text, "lxml").find_all('li')
-    for i in listofurl:
-        url = i.find('a')['href']
-        download_urls.append(url)
-    downlod_get_url = BeautifulSoup(requests.get(f"http://library.lol/main/{md5}").text, "lxml")
-    download_urls.append(f"https://libgen.rs/book/index.php?md5={md5}")
-    download_urls.append(downlod_get_url.find(attrs={"id":"download"}).find('a')['href'])
-    return download_urls
